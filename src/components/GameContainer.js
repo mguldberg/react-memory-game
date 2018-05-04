@@ -94,7 +94,6 @@ class GameContainer extends Component {
 
     event.preventDefault();
     console.log("inside submit handler");
-    alert("pause");
 
     API.searchGiphy(this.state.search).then(giphyResponse => {
       console.log(giphyResponse.data.data);
@@ -103,15 +102,15 @@ class GameContainer extends Component {
 
       console.log(giphyResponse.data.data.length);
       for (var i = 0; i < giphyResponse.data.data.length; i++) {
-      // if (res.data.status === "error") {
-      //   throw new Error(res.data.message);
-      // }
-      let imgObj = {};
+        // if (res.data.status === "error") {
+        //   throw new Error(res.data.message);
+        // }
+        let imgObj = {};
 
-      imgObj.id=i;
-      imgObj.src=giphyResponse.data.data[i].images.fixed_height_small.url;
-      imgObj.alt=giphyResponse.data.data[i].title;
-      newImageArray.push(imgObj);
+        imgObj.id = i;
+        imgObj.src = giphyResponse.data.data[i].images.fixed_height_small.url;
+        imgObj.alt = giphyResponse.data.data[i].title;
+        newImageArray.push(imgObj);
       }
       console.log(newImageArray)
 
@@ -132,18 +131,8 @@ class GameContainer extends Component {
           handleFormSubmit={this.handleFormSubmit}
         />
         <Row>
-          {/* <Col size="md-4">
-            <Card heading="Search">
-              <SearchForm
-                value={this.state.search}
-                handleInputChange={this.handleInputChange}
-                handleFormSubmit={this.handleFormSubmit}
-              />
-            </Card>
-          </Col> */}
-          <Col size="md-8">
-            {/* <div className="card-deck"> */}
-            {this.state.imageArray.map(image => (
+          {this.state.imageArray.map(image => (
+            <Col size="md-2">
               <ImageCard
                 imageFn={this.handleImageClick}
                 imageSrc={image.src}
@@ -151,9 +140,9 @@ class GameContainer extends Component {
                 imageId={image.id}
                 key={image.id}
               />
-            ))}
-            {/* </div> */}
-          </Col>
+            </Col>
+          ))}
+
         </Row>
       </Container>
     );

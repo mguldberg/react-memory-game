@@ -1,6 +1,6 @@
 import React from "react";
-import OmdbContainer from "./components/OmdbContainer";
+import GameContainer from "./components/GameContainer";
 
-const App = () => <OmdbContainer />;
+const App = () => <GameContainer />;
 
 export default App;

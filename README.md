@@ -1,7 +1,9 @@
 # REACT based Memory Game
 
 ## About
-A fun game where you need to try and pick through the images as they suffle and not pick the same image 2 times!
+A fun game where you need to try and pick through the images as they shuffle after each click.
+
+Try to not pick the same image 2 times....all the way to up 12!
 
 ## Features
 * Top right corner...set the 12 memory tiles to the topic of your choice!  It will do a giphy search for images that match that topic and your game will take on a completely different feel.
